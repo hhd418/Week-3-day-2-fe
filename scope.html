@@ -1,0 +1,58 @@
+<html>
+<head>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var createMultiplier = function(NumbertoMultiply) {
+			var multiplier = function(x) {
+				return x * NumbertoMultiply;
+			};
+			return multiplier;
+		};
+
+		var mult5 = createMultiplier(5);
+		console.log('5 times 3 is', mult5(3));
+
+		var NearlyUselessCalculator = function(number) {
+			var obj = {
+				add: function(x) {
+					return x + number;
+				},
+				sub: function(x) {
+					return number - x;
+				},
+				mult: function(x) {
+					return number * x;
+				}
+			};
+			return obj;
+		};
+
+		var calc = NearlyUselessCalculator(7);
+
+		console.log('7 + 3 =', calc.add(3));
+		console.log('7 - 4 =', calc.sub(4));
+		console.log('7 * 5 =', calc.mult(5));
+
+		var NearlyUselessCalculator = function(number) {
+			this.add = function(x) {
+				return x + number;
+			};
+			this.sub = function(x) {
+				return number - x;
+			};
+			this.mult = function(x) {
+				return number * x;
+			};
+		};
+
+
+		var calc = new NearlyUselessCalculator(7);
+
+		console.log('7 + 3 =', calc.add(3));
+		console.log('7 - 4 =', calc.sub(4));
+		console.log('7 * 5 =', calc.mult(5));
+	</script>
+</body>
+</html>
